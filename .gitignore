@@ -1,0 +1,27 @@
+# Archivos de configuración con API keys
+config.js
+
+# Archivos de desarrollo
+debug.html
+test-simple.html
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Carpetas de dependencias
+node_modules/
+.npm/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales
+*.tmp
+*.temp

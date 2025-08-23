@@ -1,0 +1,1815 @@
+/* Variables CSS para tema oscuro */
+:root {
+  /* Colores principales */
+  --color-primary: #8B5CF6;     /* Morado vibrante */
+  --color-secondary: #3B82F6;   /* Azul brillante */
+  --color-accent: #6366F1;      /* Índigo */
+  --color-background: #0F0F23;  /* Negro azulado profundo */
+  --color-surface: #1E1E3F;     /* Gris oscuro con tinte azul */
+  --color-text: #F8FAFC;        /* Blanco suave */
+  --color-text-secondary: #CBD5E1; /* Gris claro */
+  --color-error: #EF4444;       /* Rojo para errores */
+  --color-success: #10B981;     /* Verde para éxito */
+  
+  /* Gradientes */
+  --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+  --gradient-surface: linear-gradient(145deg, #1E1E3F 0%, #2D1B69 100%);
+  --gradient-background: linear-gradient(135deg, #0F0F23 0%, #1E1E3F 25%, #2D1B69 50%, #3B1E7A 75%, #1E1E3F 100%);
+  
+  /* Fuentes */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Bordes */
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* Animaciones */
+  --animation-duration: 0.3s;
+  --animation-duration-slow: 0.5s;
+  --animation-duration-fast: 0.15s;
+  --transition-duration: 0.3s;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--gradient-background);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Header */
+.header {
+  background: rgba(30, 30, 63, 0.8);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.app-logo {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.3));
+  transition: all 0.3s ease;
+}
+
+.app-logo:hover {
+  transform: scale(1.1);
+  color: var(--color-secondary);
+}
+
+/* Selector de idioma */
+.language-selector {
+  display: flex;
+  gap: var(--spacing-xs);
+  background: rgba(139, 92, 246, 0.1);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--color-text);
+}
+
+.lang-btn.active {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.welcome-content h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text);
+}
+
+.welcome-content p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Contenedor de chat */
+.chat-container {
+  flex: 1;
+  margin-bottom: var(--spacing-lg);
+  min-height: 300px;
+}
+
+.messages-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  max-height: 60vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Área de entrada */
+.input-area {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-lg);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.input-container {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+.message-input {
+  flex: 1;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  resize: none;
+  min-height: 60px;
+  max-height: 120px;
+  transition: all 0.2s ease;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.message-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.send-button {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: all 0.2s ease;
+  min-height: 60px;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.input-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-sm);
+}
+
+.char-counter {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Overlay de carga */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 15, 35, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.loading-overlay.show {
+  display: flex;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(139, 92, 246, 0.3);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-lg);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
+
+/* Mensaje de error */
+.error-message {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: var(--color-error);
+  color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: none;
+  max-width: 400px;
+  z-index: 1001;
+  animation: slideIn 0.3s ease;
+}
+
+.error-message.show {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.error-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.error-text {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.error-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.error-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar personalizada */
+.messages-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-area::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 3px;
+}
+
+.messages-area::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.messages-area::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+/*
+ Estilos para mensajes de chat */
+.message {
+  margin-bottom: var(--spacing-lg);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-user {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-assistant {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-content {
+  max-width: 80%;
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.message-user .message-content {
+  background: var(--gradient-primary);
+  border: none;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xs);
+}
+
+.message-author {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.message-user .message-author {
+  color: white;
+}
+
+.message-time {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.message-user .message-time {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.message-text {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  word-wrap: break-word;
+}
+
+.message-user .message-text {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .header {
+    padding: var(--spacing-md);
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .app-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .app-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .main-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .welcome-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .welcome-content h2 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .input-area {
+    padding: var(--spacing-md);
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .input-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+  
+  .message-input {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .send-button {
+    align-self: stretch;
+    justify-content: center;
+    min-height: 48px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .message-content {
+    max-width: 95%;
+  }
+  
+  .error-message {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    left: var(--spacing-sm);
+    max-width: none;
+  }
+  
+  .language-selector {
+    order: -1;
+  }
+  
+  .input-info {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .message-content {
+    max-width: 85%;
+  }
+}
+
+/* Estados de hover y focus mejorados */
+@media (hover: hover) {
+  .lang-btn:hover {
+    transform: translateY(-1px);
+  }
+  
+  .send-button:hover:not(:disabled) {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .loading-spinner {
+    animation: none;
+    border: 3px solid var(--color-primary);
+  }
+}
+
+/* Focus visible para navegación por teclado */
+.lang-btn:focus-visible,
+.send-button:focus-visible,
+.message-input:focus-visible,
+.error-close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Mejoras para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .loading-spinner {
+    border-width: 2px;
+  }
+}
+/* Mejor
+as adicionales para diseño responsivo */
+
+/* Breakpoint para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .app-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .app-logo {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .welcome-content h2 {
+    font-size: var(--font-size-base);
+  }
+  
+  .welcome-content p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .input-area {
+    padding: var(--spacing-sm);
+  }
+  
+  .message-input {
+    min-height: 50px;
+    font-size: var(--font-size-sm);
+  }
+  
+  .send-button {
+    min-height: 44px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Breakpoint para pantallas grandes */
+@media (min-width: 1440px) {
+  .app-container {
+    max-width: 1400px;
+  }
+  
+  .main-content {
+    max-width: 900px;
+  }
+  
+  .header-content {
+    max-width: 900px;
+  }
+  
+  .app-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .app-logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .welcome-content h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .welcome-content p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Mejoras para orientación landscape en móviles */
+@media (max-width: 767px) and (orientation: landscape) {
+  .welcome-section {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .messages-area {
+    max-height: 40vh;
+  }
+  
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .header-content {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+  
+  .language-selector {
+    order: 0;
+  }
+}
+
+/* Mejoras para tema oscuro */
+
+/* Mejor contraste para elementos interactivos */
+.message-input:focus {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  border-color: var(--color-secondary);
+}
+
+/* Mejores sombras para tema oscuro */
+.input-area {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.1);
+}
+
+.message-content {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(139, 92, 246, 0.1);
+}
+
+.message-user .message-content {
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* Mejores estados hover para tema oscuro */
+.lang-btn:hover {
+  background: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+}
+
+.send-button:hover:not(:disabled) {
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4), 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Mejoras para elementos táctiles en móviles */
+@media (max-width: 767px) {
+  .lang-btn {
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+  }
+  
+  .error-close {
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .send-button {
+    min-height: 56px;
+    min-width: 56px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  /* Mejor espaciado táctil */
+  .message-input {
+    padding: var(--spacing-lg);
+    font-size: 16px; /* Prevenir zoom en iOS */
+    min-height: 56px;
+  }
+  
+  /* Área de toque más grande para el logo */
+  .app-logo {
+    padding: var(--spacing-sm);
+    margin: calc(-1 * var(--spacing-sm));
+    cursor: pointer;
+  }
+  
+  /* Mejorar área táctil para elementos pequeños */
+  .char-counter {
+    padding: var(--spacing-sm);
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Espaciado mejorado para botones */
+  .clear-chat-btn {
+    min-height: 48px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    gap: var(--spacing-sm);
+  }
+  
+  /* Mejorar el área de entrada en móviles */
+  .input-container {
+    gap: var(--spacing-md);
+  }
+  
+  .input-area {
+    padding: var(--spacing-lg);
+  }
+  
+  /* Mejorar la navegación por teclado en móviles */
+  .message-input:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  .send-button:focus-visible,
+  .lang-btn:focus-visible,
+  .clear-chat-btn:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Soporte para modo de alto contraste */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text: #FFFFFF;
+    --color-text-secondary: #E2E8F0;
+    --color-surface: #2D3748;
+    --color-background: #000000;
+  }
+  
+  .message-input {
+    border-width: 2px;
+  }
+  
+  .lang-btn.active {
+    border: 2px solid var(--color-text);
+  }
+  
+  .send-button {
+    border: 2px solid transparent;
+  }
+  
+  .send-button:focus-visible {
+    border-color: var(--color-text);
+  }
+}
+
+/* Soporte para preferencias de transparencia reducida */
+@media (prefers-reduced-transparency) {
+  .header {
+    background: var(--color-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .loading-overlay {
+    background: var(--color-background);
+    backdrop-filter: none;
+  }
+}
+
+/* Mejoras para impresión (aunque es poco probable) */
+@media print {
+  .header {
+    position: static;
+    background: white;
+    color: black;
+  }
+  
+  .loading-overlay,
+  .error-message {
+    display: none !important;
+  }
+  
+  .messages-area {
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .input-area {
+    display: none;
+  }
+}
+
+/* Animaciones adicionales para mejor UX */
+.app-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Animaciones suaves para transiciones */
+.message-input {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.message-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2), 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.send-button {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+}
+
+.send-button:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Animaciones para elementos de la interfaz */
+.lang-btn {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.lang-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.lang-btn.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Animación para el header al hacer scroll */
+.header {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.header.scrolled {
+  background: rgba(30, 30, 63, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones para mensajes */
+.message {
+  animation: slideInMessage 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
+}
+
+.message:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación para el scroll automático */
+.messages-area {
+  scroll-behavior: smooth;
+  transition: scroll-behavior var(--transition-duration) ease;
+  position: relative;
+}
+
+.messages-area.auto-scrolling {
+  scroll-behavior: smooth;
+}
+
+/* Indicador de scroll para nuevos mensajes */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  transition: all var(--transition-duration) var(--transition-timing);
+  animation: bounceIn 0.5s ease;
+}
+
+.scroll-indicator.show {
+  display: flex;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mejorar la experiencia de scroll en móviles */
+@media (max-width: 767px) {
+  .messages-area {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  .scroll-indicator {
+    bottom: calc(var(--spacing-lg) + 80px); /* Evitar conflicto con input area */
+    right: var(--spacing-md);
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Animaciones para estados de carga */
+.typing-indicator {
+  animation: slideInTyping 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInTyping {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación para el indicador de escritura */
+.typing-dots span {
+  animation: typingDots 1.4s infinite ease-in-out;
+}
+
+@keyframes typingDots {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Animaciones para errores y validación */
+.error-message {
+  animation: slideInError 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.validation-message {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.validation-message.show {
+  animation: slideInValidation 0.3s ease;
+}
+
+@keyframes slideInValidation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para el contador de caracteres */
+.char-counter {
+  transition: all 0.3s ease;
+}
+
+.char-counter.warning {
+  animation: pulse 2s infinite;
+}
+
+.char-counter.danger {
+  animation: shake 0.5s ease-in-out, pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+/* Animaciones para elementos interactivos */
+.clear-chat-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clear-chat-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.clear-chat-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Animación para el logo */
+.app-logo {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-logo:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.4));
+}
+
+/* Animaciones para el área de entrada */
+.input-area {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-area:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(139, 92, 246, 0.2);
+}
+
+/* Animación para la sección de bienvenida */
+.welcome-section {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.welcome-section.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+/* Animaciones para dispositivos móviles optimizadas */
+@media (max-width: 767px) {
+  .message:hover {
+    transform: none; /* Desactivar hover en móviles */
+  }
+  
+  .send-button:hover:not(:disabled) {
+    transform: scale(1.02); /* Reducir efecto hover en móviles */
+  }
+  
+  .lang-btn:hover {
+    transform: scale(1.02); /* Reducir efecto hover en móviles */
+  }
+  
+  /* Animaciones táctiles específicas */
+  .send-button:active:not(:disabled) {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  .lang-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  .message-input:focus {
+    transform: none; /* Evitar movimiento en móviles */
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  }
+  
+  .input-area:focus-within {
+    transform: none; /* Evitar movimiento en móviles */
+  }
+}
+
+/* Loading state para la aplicación */
+.app-container.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.app-container.loading::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-primary);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+}
+
+/* Mejora de la transición del header al hacer scroll */
+.header {
+  transition: all 0.3s ease;
+}
+
+/* Estados de carga mejorados */
+.loading-overlay {
+  transition: opacity 0.3s ease;
+}
+
+.loading-overlay.show {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Mejoras para el selector de idioma */
+.language-selector {
+  transition: all 0.2s ease;
+}
+
+.language-selector:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Indicador visual para elementos enfocados por teclado */
+.app-title:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--border-radius-sm);
+}/
+* Estilos para el indicador de escritura */
+.typing-indicator {
+  display: none;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.typing-indicator.show {
+  display: block;
+}
+
+.typing-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  max-width: 80%;
+}
+
+.typing-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.typing-text {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.typing-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.typing-dots span {
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: typingDots 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingDots {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Mejoras para los mensajes de chat */
+.message {
+  margin-bottom: var(--spacing-lg);
+  animation: slideInMessage 0.4s ease-out;
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Avatar para mensajes del asistente */
+.message-assistant .message-content::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 21H5V3H13V9H19Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.message-assistant {
+  position: relative;
+  margin-left: 48px;
+}
+
+/* Avatar para mensajes del usuario */
+.message-user .message-content::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--color-text);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z' fill='%23333'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.message-user {
+  position: relative;
+  margin-right: 48px;
+}
+
+.message-content {
+  position: relative;
+}
+
+/* Mejoras para el área de entrada */
+.input-area {
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+}
+
+/* Botón de limpiar chat */
+.chat-actions {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.chat-actions.show {
+  opacity: 1;
+}
+
+.clear-chat-btn {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--color-error);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.clear-chat-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.clear-chat-btn:focus-visible {
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+/* Mensaje de estado vacío */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.empty-state svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.7;
+}
+
+/* Mejoras responsivas para avatares */
+@media (max-width: 767px) {
+  .message-assistant {
+    margin-left: 0;
+  }
+  
+  .message-user {
+    margin-right: 0;
+  }
+  
+  .message-assistant .message-content::before,
+  .message-user .message-content::after {
+    display: none;
+  }
+  
+  .typing-content {
+    max-width: 95%;
+  }
+  
+  .typing-avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Animación para el scroll automático */
+.messages-area.scrolling {
+  scroll-behavior: smooth;
+}
+
+/* Mejoras para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+  /* Estilos específicos para dispositivos táctiles */
+  .send-button,
+  .lang-btn,
+  .error-close,
+  .clear-chat-btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .message-input {
+    font-size: 16px; /* Prevenir zoom en iOS */
+    min-height: 48px;
+  }
+  
+  /* Mejorar el área de toque para elementos pequeños */
+  .char-counter {
+    padding: var(--spacing-xs);
+    min-height: 24px;
+  }
+}
+
+/* Animaciones suaves para transiciones de estado */
+.send-button:disabled {
+  transition: all 0.3s ease;
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.send-button:not(:disabled) {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.send-button:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.send-button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+/* Animación para el cambio de idioma */
+.lang-btn.active {
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.lang-btn:not(.active):hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+/* Mejoras para la experiencia de escritura */
+.message-input:focus,
+.message-input.focused {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.message-input.focused {
+  border-color: var(--color-primary);
+}
+
+/* Animación para mensajes que aparecen */
+.message {
+  animation: slideInMessage 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación para el indicador de escritura */
+.typing-indicator {
+  animation: fadeInUp 0.3s ease;
+}
+
+.typing-indicator.show {
+  animation: slideInTyping 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slideInTyping {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras para el contador de caracteres */
+.char-counter.warning {
+  color: orange;
+  font-weight: 500;
+}
+
+.char-counter.danger {
+  color: var(--color-error);
+  font-weight: 600;
+  animation: pulse 1s infinite;
+}
+
+.char-counter.error {
+  color: var(--color-error);
+  font-weight: 600;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* Validation message */
+.validation-message {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  margin-top: var(--spacing-xs);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  min-height: 0;
+}
+
+.validation-message.show {
+  opacity: 1;
+  transform: translateY(0);
+  min-height: 1.2em;
+}
+
+.input-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+}
+
+/* Indicador de mensaje nuevo */
+.message.new {
+  animation: highlightNew 2s ease-out;
+}
+
+@keyframes highlightNew {
+  0% {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: var(--border-radius-lg);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* Mejoras para el botón de envío */
+.send-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.send-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.send-button:active::before {
+  width: 100px;
+  height: 100px;
+}
+
+/* Estados del textarea mejorados */
+.message-input.has-content {
+  border-color: var(--color-primary);
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.message-input.error {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Tooltip para el botón de envío */
+.send-button[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  margin-bottom: var(--spacing-xs);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  z-index: 1000;
+}/* E
+stilos para el indicador de escritura */
+.typing-indicator {
+  display: none !important; /* Forzar que esté oculto por defecto */
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.typing-indicator.show {
+  display: block !important;
+}
+
+.typing-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  max-width: 80%;
+}
+
+.typing-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.typing-text {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.typing-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.typing-dots span {
+  width: 4px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  animation: typingDots 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingDots {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
