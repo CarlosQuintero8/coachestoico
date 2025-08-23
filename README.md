@@ -241,44 +241,9 @@ const CONFIG = {
 };
 ```
 
-## 🤝 Contribuciones
-
-### 🎯 **Cómo Contribuir**
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -am 'Agrega nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Crea un Pull Request
-
-### 💡 **Ideas de Contribución**
-- 🌍 Agregar más idiomas (francés, alemán, italiano)
-- 📚 Más consejos estoicos auténticos
-- 🎨 Temas de color adicionales
-- 🔊 Síntesis de voz para respuestas
-- 📱 Funcionalidades PWA avanzadas
-- 🧠 Integración con más modelos de IA
-
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente.
-
-## 🆘 Soporte
-
-### 🐛 **Reportar Bugs**
-- Abre un issue en GitHub
-- Incluye pasos para reproducir
-- Especifica navegador y versión
-
-### 💬 **Obtener Ayuda**
-- Lee la documentación completa
-- Revisa issues existentes
-- Consulta `GEMINI_SETUP.md` para configuración
-
-## 🎖️ Reconocimientos
-
-- **Filosofía Estoica**: Marco Aurelio, Epicteto, Séneca
-- **Google Gemini AI**: Por la integración de IA
-- **Comunidad Open Source**: Por inspiración y feedback
+Este proyecto está bajo la Licencia MIT.
 
 ---
 
