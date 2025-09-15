@@ -27,7 +27,7 @@ Una aplicación web moderna que proporciona consejos personalizados basados en l
 ### Opción 1: Con Gemini AI (Recomendado)
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/tu-usuario/coach-estoico.git
+git clone https://github.com/carlosquintero8/coach-estoico.git
 cd coach-estoico
 
 # 2. Configura Gemini AI
